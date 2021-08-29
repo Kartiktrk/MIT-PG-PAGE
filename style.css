@@ -9,7 +9,7 @@
     float: left;
     font-family: "Papyrus" , "Fantasy";
     width: 35%;
-    height: 600px; 
+    height: 400px; 
     color: white;
     border: 0.1px solid #04566E;
     background-color: #04566E;
@@ -30,7 +30,7 @@
     }
   
   .mySlides {display: none}
-  img {vertical-align: middle; height: 600px;}
+  .carimg {vertical-align: middle; height: 400px;}
   
   /* Slideshow container */
   .slideshow-container {
