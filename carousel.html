@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Carousel Part</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <section>
+
+        <article class = "introtext">
+        <u><strong> <center> <font size= 10%> Welcome </font> <center></strong></u>
+        Welcome . <br>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt rerum eaque inventore vel, tenetur ipsam asperiores 
+            ratione accusantium aut architecto voluptatum, doloribus molestiae ad? Vitae, 
+            ab itaque! Odit, quos impedit. </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quo animi, omnis eveniet non ex ipsum in sapiente 
+            commodi, veniam, minima architecto. Praesentium dicta repellendus quos, 
+            sequi laborum officia laudantium.</p>
+        </article>
+        
+        <article class="carouselpart">
+        <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="img1.jpg" style="width:100%;filter: grayscale()">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="img2.jpg" style="width:100%;filter:xray">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="img3.jpg" style="width:100%;filter: invert(1.3);">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        </article>
+        </section>
+                            <!--SECTION ENDS-->
+</body>
+<script>
+    var slideIndex = 1;
+    function move(){
+      plusSlides(1);
+    }
+    setInterval(move, 2500);
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+</html>

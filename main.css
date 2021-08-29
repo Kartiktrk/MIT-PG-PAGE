@@ -1,241 +1,149 @@
-*,*::after,*::before{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-
-body{
-    font-family : "ABeeZee",sans-serif;
+body {
+  font-size: 14px;
 }
-
-@media only screen and (min-width: 1200px) {
-    .left{
-        float : left;
-        width : 50%;
-        height : 100%;
-    }
-
-    .heading{
-        margin-top : 10%;
-        margin-left : 3%;
-    }
-
-    .about{
-        margin-top : 10%;
-        margin-left : 3%;
-        width : 90%;
-        font-size : 1.2rem;
-    }
-
-    .button{
-        background : white;
-        transition : ease-in-out 300ms;
-        margin-top : 9%;
-        padding : 1rem 1.5rem 1rem 1.5rem;
-        font-size : 1.2rem;
-        border : gray;
-        border-radius : 1rem;
-        box-shadow : 0px 0px 9px gray
-    }
-
-    #reg{
-        background : rgb(39, 62, 121);
-        color : white;
-    }
-
-    .button:hover{
-        background : rgb(39, 62, 121);
-        color : white;
-    }
-
-    .right{
-        float : right;
-        width : 46%;
-        height : 100%;
-        border : solid black;
-        border-radius : 2rem;
-        margin-right : 3%;
-        background: white;
-        box-shadow:0px 0px 9px gray;
-    }
-
-    .regpdf{
-        margin-top:0.5%;
-        width : 99%;
-        height : 99%;
-        border : solid black;
-        border-radius : 1.9rem;
-    }
-
-    .curmap{
-        background-image : url("background.png");
-        background-repeat: no-repeat;
-        background-size : cover;
-        background-position: -5px -1px;
-        float : right;
-        width : 46%;
-        height : 100%;
-        border : solid black;
-        border-radius : 2rem;
-        margin-right : 3%;
-        box-shadow:0px 0px 9px gray;
-    }
-
-    .btn{
-        background : white;
-        transition : ease-in-out 300ms;
-        padding : 0.6rem 1rem 0.6rem 1rem;
-        font-size : 1rem;
-        border : solid gray;
-        border-radius : 1rem;
-    }
-
-    .lht{
-        margin-left : 15%;
-    }
-
-    .rht{
-        margin-left : 63%;
-    }
-
-    .btn:hover{
-        background : rgb(39, 62, 121);
-        color : white;
-    }
-
-    #curfullpdf,#semesterpdf{
-        background : white;
-        transition : ease-in-out 300ms;
-        padding : 0.6rem 1rem 0.6rem 1rem;
-        font-size : 1.1rem;
-        border : solid gray;
-    }
-
-    #curfullpdf:hover,#semesterpdf:hover{
-        background : rgb(39, 62, 121);
-        color : white;
-    }
-
-    .sssss{
-        color :rgb(69, 90, 141)
-    }
-
-    .semester{
-        float : right;
-        width : 46%;
-        height : 100%;
-        border : solid black;
-        border-radius : 2rem;
-        margin-right : 3%;
-        background: white;
-        box-shadow:0px 0px 9px gray;
-    }
-
-    .sub{
-        width : 260px;
-        height : 90px;
-        border : solid rgb(184, 181, 181);
-        margin-left : -3.5%;
-        transition : ease-in-out 100ms;
-    }
-
-    .sub:hover{
-        border : solid gray;
-        background : rgb(238, 238, 238);
-    }
-
-    .maintable{
-        margin-left : 4.25%;
-        width : 100%;
-    }
-
-    #curmapphone{
-        display : none;
-    }
-
-    #mainphone{
-        display : none;
-    }
+.v101_7 {
+  width: 100%;
+  height: 821px;
+  background: rgba(236,234,234,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
 }
-@media only screen and (max-width: 768px) {
-    .button{
-        background : white;
-        transition : ease-in-out 300ms;
-        margin-top : 9%;
-        padding : 1rem 1.5rem 1rem 1.5rem;
-        font-size : 1rem;
-        border : gray;
-        border-radius : 1rem;
-        box-shadow : 0px 0px 9px gray
-    }
-
-     .right{
-        display : none;
-    }
-
-     .heading{
-        margin-top : 10%;
-        margin-left : 3%;
-    }
-
-    .about{
-        margin-top : 10%;
-        margin-left : 3%;
-        width : 90%;
-        font-size : 1rem;
-        text-align:justify;
-    }
-
-    #mainphone{
-        width : 90%;
-        margin-left : 5%;
-        margin-top : 3%;
-        border : solid black;
-        border-radius : 2rem;
-        background: white;
-        box-shadow:0px 0px 9px gray;
-    }
-
-    .btn{
-        background : white;
-        transition : ease-in-out 300ms;
-        font-size : 1rem;
-        border : solid gray;
-        width : 70%;
-        padding : 0.5rem;
-        border-radius : 0.3rem;
-    }
-
-    .btn:hover{
-        background : rgb(39, 62, 121);
-        color : white;
-    }
-
-     #curfullpdf,#semesterpdf{
-        background : white;
-        transition : ease-in-out 300ms;
-        padding : 0.3rem 0.3rem 0.3rem 0.3rem;
-        font-size : 0.95rem;
-        border : solid gray;
-    }
-
-    #curfullpdf:hover,#semesterpdf:hover{
-        background : rgb(39, 62, 121);
-        color : white;
-    }
-
-    #reg{
-        background : rgb(39, 62, 121);
-        color : white;
-    }
-
-    .sub{
-        width : 100%;
-        height : 60px;
-        border : solid rgb(184, 181, 181);
-        transition : ease-in-out 100ms;
-    }
-
-    .sub:hover{
-        border : solid gray;
-        background : rgb(238, 238, 238);
-    }
+.v101_8 {
+  width: 578px;
+  height: 706px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 70px;
+  left: 383px;
+  border: 1px solid rgba(0,0,0,1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v101_9 {
+  width: 267px;
+  height: 67px;
+  background: rgba(39,62,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 649px;
+  left: 87px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.v101_10 {
+  width: 267px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 648px;
+  left: 376px;
+  border: 1px solid rgba(196,196,196,1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v101_11 {
+  width: 219px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 665px;
+  left: 145px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+.v101_12 {
+  width: 225px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 665px;
+  left: 439px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+.v101_13 {
+  width: 386px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 168px;
+  left: 268px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+.v101_14 {
+  width: 234px;
+  height: 49px;
+  background: rgba(39,62,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 418px;
+  left: 211px;
+  border: 2px solid rgba(162,162,162,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v101_15 {
+  width: 186px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 423px;
+  left: 130px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+.v101_16 {
+  width: 525px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 354px;
+  left: 91px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.v101_17 {
+  width: 558px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 96px;
+  left: 145px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 32px;
+  opacity: 1;
+  text-align: left;
+}
+.name {
+  color: #fff;
 }
