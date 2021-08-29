@@ -358,7 +358,7 @@
     }
 }
 /* ProgTitle CSS */
-.ProgName {
+/* .ProgName {
     background-image: url("progBG.png") ;
     color : white;
     padding : 0.25%;
@@ -366,7 +366,7 @@
 .ProgName h2{
     
     backdrop-filter: blur(10px);
-}
+} */
 .footer-distributed {
     background-color: #011f4b;
     width: 100%;
