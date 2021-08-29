@@ -1,0 +1,696 @@
+<html>
+    <head>
+        <title>
+            MIT PG Page
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+        </style>
+        <script>
+            function changecur(){
+                var windowsize = window.innerWidth;
+                document.getElementById("cur").style.background = "rgb(39, 62, 121)";
+                document.getElementById("cur").style.color = "white";
+                document.getElementById("reg").style.color="black";
+                document.getElementById("reg").style.background="white";
+                if (windowsize >= 1200) {
+                    document.getElementById("main").innerHTML = document.getElementById("curselect").innerHTML;
+                    document.getElementById('main').style.backgroundImage = 'none';
+                }
+                else{
+                    document.getElementById("mainphone").innerHTML = document.getElementById("curselectphone").innerHTML;
+                    // document.getElementById("mainphone").style.height = "60%";
+                }
+            }
+            function changereg(){
+                var windowsize = window.innerWidth;
+                document.getElementById("reg").style.background = "rgb(39, 62, 121)";
+                document.getElementById("reg").style.color = "white";
+                document.getElementById("cur").style.background = "white";
+                document.getElementById("cur").style.color = "black";
+                if(windowsize >=1200){
+                    document.getElementById("main").innerHTML = document.getElementById("regselect").innerHTML; 
+                    document.getElementById("main").style.backgroundImage= 'none';
+                }
+                else{
+                    document.getElementById("mainphone").innerHTML = document.getElementById("regselectphone").innerHTML;
+                    // document.getElementById("mainphone").style.height = "60%";
+                }
+            }
+            function semesterchnge(object){
+                var windowsize = window.innerWidth;
+                document.getElementById("semtitle").innerHTML = object.value;
+                document.getElementById("semesterpdf").innerHTML = "Full PDF for " + object.value;
+                if(windowsize >= 1200){
+                    document.getElementById("main").innerHTML = document.getElementById("sem").innerHTML;
+                    document.getElementById("main").style.backgroundImage = 'none';
+                }
+                else{
+                    document.getElementById("mainphone").innerHTML = document.getElementById("phonesem").innerHTML;
+                    // document.getElementById("mainphone").style.height = "80%"; 
+                }
+
+            }
+        </script>
+    </head>
+    <body style = "background-color : rgb(238, 238, 238)">
+        <div class = "left">
+            <h1 class="heading">Regulations <br>and Curriculums</h1>
+            <p class="about">
+                The PG programme Master of Engineering (M.E.) in Computer Science and Engineering is a 2 years full-time technical programme started in the academic year 2011-2012. The programme train students with advanced study in computer science and help them develop a higher level of expertise. Students should have a Bachelor's degree with atleast 50% or equivalent CGPA in the qualifying degree examination and the admission is done based on the score secured in Graduate Aptitude Test in Engineering (GATE) or Tamil Nadu Common Entrance Test (TANCET).
+            </p>
+            <center>
+            <button class="button" style="margin-right:5%;" id="reg" onclick="changereg()">Regulation</button>
+            <button class="button" style="margin-right:5%;" onclick="changecur()" id="cur">Curriculum</button>       </center>
+        </div>
+        <div class="right" id="main">
+            <br><br>
+            <center>
+                <h1>Select Regulation Year</h1>
+            </center><br><br><br><br><br>
+            <center><button class="button"
+                    onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">2019</button>
+            </center>
+        </div>
+        <div id="mainphone">
+            <br><br>
+            <center>
+                <h1>Select Regulation Year</h1>
+            </center><br><br><br><br><br>
+            <center><button class="button"
+                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('regpdfphone').innerHTML;">2019</button>
+                </center>
+                <br>
+        </div>
+
+        <div id="regselect" style="display:none;">
+            <br><br>
+            <center>
+                <h1 id="titles">Select Regulation Year</h1>
+            </center><br><br><br><br><br>
+            <center><button class="button"
+                    onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML">2019</button>
+                </center>
+            <br>
+        </div>
+
+        <div id="curselect" style="display:none;">
+            <br><br>
+            <center>
+                <h1>Select Curriculum Year</h1>
+            </center><br><br><br><br><br>
+            <center><button class="button"
+                   onclick="document.getElementById('main').innerHTML = document.getElementById('map').innerHTML;
+                   document.getElementById('main').style.backgroundImage = 'url(background.png)';
+                   document.getElementById('main').style.backgroundSize ='cover';">2019</button></center>
+        </div>
+        <div id="regulationpdf" style="display:none;">
+          <center><embed type="application/pdf" src="2019.pdf" class="regpdf"/></center>
+        </div>
+
+         <div id="map" class="curmap" style="display:none;">
+             <center><h2>2019 Curriculum</h2></center><br><br>
+            <button class="btn lht" value="Semester 1"
+            onclick="semesterchnge(this);">
+                Semester 1
+            </button><br><br>
+            <button class="btn rht" value="Semester 2"
+            onclick = "semesterchnge(this);">
+                Semester 2
+            </button><br><br>
+            <button class="btn lht" value="Semester 3"
+            onclick = "semesterchnge(this);">
+                Semester 3
+            </button><br><br>
+            <button class="btn rht" value = "Semester 4"
+            onclick = "semesterchnge(this);">
+                Semester 4
+            </button><br><br>
+            <button class="btn lht" value = "PEC"
+            onclick = "semesterchnge(this);">
+                PEC
+            </button><br><br>
+            <button class="btn rht" value = "OEC"
+            onclick = "semesterchnge(this);">
+                OEC
+            </button><br><br><br>
+            <center><button id="curfullpdf"
+                onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;"
+                >
+                PDF for All semesters</button></center>
+        </div> 
+        <div id="sem" class="semester" style="display:none;">
+            <center><h2 id="semtitle">Semester 1</h2></center><br>
+            <center>
+            <table class = "maintable">
+                <tr><td>
+                <p class="sub"
+                 onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                    <table>
+                        <tr><td>
+                    Advanced Mathematics For Scientific Computing<br>
+                    <span style="color:rgb(71, 71, 153)">MA5153</span>
+                    </td>
+                    <td>
+                    <table class="sidetable">
+                        <tr><th>L</th><th>P</th><th>T</th><th>C</th></tr>
+                        <tr><td>3</td><td>1</td><td>0</td><td>4</td></tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                </p>
+                </td><td>
+                <p class="sub" 
+                onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                    <table>
+                        <tr><td>
+                    Multi Core Architecture<br>
+                    <span style="color:rgb(71, 71, 153)">MA5153</span>
+                    </td>
+                    <td>
+                    <table class="sidetable">
+                        <tr>
+                            <th>L</th>
+                            <th>P</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                </p>
+                </td></tr>
+                <tr><td>
+                <p class="sub"
+                 onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                    <table>
+                        <tr><td>
+                    Advanced Mathematics For Scientific Computing<br>
+                    <span style="color:rgb(71, 71, 153)">MA5153</span>
+                    </td>
+                    <td>
+                    <table class = "sidetable">
+                        <tr>
+                            <th>L</th>
+                            <th>P</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                </p>
+                </td><td>
+                <p class="sub"
+                 onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                    <table>
+                        <tr><td>
+                    Advanced Mathematics For Scientific Computing<br>
+                    <span style="color:rgb(71, 71, 153)">MA5153</span>
+                    </td>
+                    <td>
+                    <table class = "sidetable">
+                        <tr>
+                            <th>L</th>
+                            <th>P</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                </p>
+                </td></tr>
+                <tr><td>
+                    <p class="sub"
+                     onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                        <table>
+                            <tr><td>
+                        Advanced Mathematics For Scientific Computing<br>
+                        <span style="color:rgb(71, 71, 153)">MA5153</span>
+                        </td>
+                        <td>
+                    <table class = "sidetable">
+                        <tr>
+                            <th>L</th>
+                            <th>P</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                    </p>
+                </td>
+                <td>
+                    <p class="sub"
+                     onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                        <table>
+                            <tr><td>
+                        Advanced Mathematics For Scientific Computing<br>
+                        <span style="color:rgb(71, 71, 153)">MA5153</span>
+                        </td>
+                        <td>
+                    <table class = "sidetable">
+                        <tr>
+                            <th>L</th>
+                            <th>P</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                    </p>
+                </td></tr>
+                <tr><td>
+                    <p class="sub" 
+                     onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                        <table>
+                            <tr><td>
+                        Advanced Mathematics For Scientific Computing<br>
+                        <span style="color:rgb(71, 71, 153)">MA5153</span>
+                        </td>
+                        <td>
+                    <table class = "sidetable">
+                        <tr>
+                            <th>L</th>
+                            <th>P</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                    </p>
+                </td>
+                <td>
+                    <p class="sub" 
+                     onclick="document.getElementById('main').innerHTML = document.getElementById('regulationpdf').innerHTML;">
+                        <table>
+                            <tr><td>
+                        Advanced Mathematics For Scientific Computing<br>
+                        <span style="color:rgb(71, 71, 153)">MA5153</span>
+                        </td>
+                        <td>
+                    <table class = "sidetable">
+                        <tr>
+                            <th>L</th>
+                            <th>P</th>
+                            <th>T</th>
+                            <th>C</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                    </table>
+                    </p>
+                </td></tr>
+            </table>
+            </center>
+            <br><br>
+               <center>
+                   <button id="semesterpdf"
+                     onclick = "document.getElementById('main').innerHTML = document.getElementById ('regulationpdf').innerHTML;"
+                   >
+                PDF for Semester 1
+            </button></center>
+        </div>
+        <div id="regpdfphone" style="display:none">
+            <br><br><br>
+            <center><h3>Click the button below to Download Regulation PDF</h3></center><br><br><br>
+            <center><button class="button"><a href="2019.pdf" download="newfilename" target="__blank">Download the pdf</a>
+            </button>
+            </center>
+            <br>
+        </div>
+
+        <div id="curpdfphone" style="display:none">
+            <br><br><br>
+            <center>
+                <h3>Click the button below to Download Curriculum PDF</h3>
+            </center><br><br><br>
+            <center><button class="button"><a href="2019.pdf" download="newfilename" target="__blank">Download the pdf</a>
+                </button>
+            </center>
+            <br>
+        </div>
+
+        <div id="curselectphone" style="display:none;">
+            <br><br>
+            <center>
+                <h1>Select Curriculum Year</h1>
+            </center><br><br><br><br><br>
+            <center><button class="button" onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curmapphone').innerHTML;">2019</button></center>
+            <br>
+        </div>
+
+        <div id="regselectphone" style="display:none;">
+            <br><br>
+            <center>
+                <h1 id="titles">Select Regulation Year</h1>
+            </center><br><br><br><br><br>
+            <center><button class="button"
+                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('regpdfphone').innerHTML">2019</button>
+            </center>
+        </div>
+
+        <div id="curmapphone" style="display:none;">
+            <center>
+                <h2>2019 Curriculum</h2>
+            </center>
+            <center>
+            <button class="btn" value="Semester 1" onclick="semesterchnge(this);">
+                Semester 1
+            </button><br><br>
+            <button class="btn" value="Semester 2" onclick="semesterchnge(this);">
+                Semester 2
+            </button><br><br>
+            <button class="btn" value="Semester 3" onclick="semesterchnge(this);">
+                Semester 3
+            </button><br><br>
+            <button class="btn" value="Semester 4" onclick="semesterchnge(this);">
+                Semester 4
+            </button><br><br>
+            <button class="btn" value="PEC" onclick="semesterchnge(this);">
+                PEC
+            </button><br><br>
+            <button class="btn" value="OEC" onclick="semesterchnge(this);">
+                OEC
+            </button></center><br>
+            <center><button id="curfullpdf"
+                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                    PDF for All semesters</button><br></center>
+                    <br>
+            </div>
+
+            <div id = "phonesem" style="display:none;">
+                <center>
+                    <h2 id="semtitle">Semester 1</h2>
+                </center>
+                <center>
+                    <table class="maintable">
+                        <tr>
+                            <td>
+                                <p class="sub"
+                                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <p class="sub"
+                                   onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable" style="text-align:left;">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub"
+                                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <p class="sub"
+                                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub"
+                                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <p class="sub"
+                                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub"
+                                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <p class="sub"
+                                    onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Advanced Mathematics For Scientific Computing<br>
+                                            <span style="color:rgb(71, 71, 153)">MA5153</span>
+                                        </td>
+                                        <td>
+                                            <table class="sidetable">
+                                                <tr>
+                                                    <th>L</th>
+                                                    <th>P</th>
+                                                    <th>T</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+                <center>
+                    <br>
+                    <button id="semesterpdf"
+                       onclick="document.getElementById('mainphone').innerHTML = document.getElementById('curpdfphone').innerHTML;">
+                        PDF for Semester 1
+                    </button>
+                </center>
+                <br>
+            </div>
+    </body>
+</html>
