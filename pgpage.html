@@ -1,3 +1,272 @@
 <html>
-    
+    <head>
+        <link rel = "stylesheet" href = "header.css">
+    </head>
+    <body>
+        
+        <!-- header ahead -->
+        <div class="top">
+            <div class="title-bar">
+                <h1>
+                    <span class="logo-img"></span>
+                    <a class="title" routerLink="./">
+                        <span class="main-title"
+                            ><span>Department of</span> Computer Technology</span
+                        >
+                        <span class="sub-title"
+                            >Anna University, MIT campus, India</span
+                        >
+                    </a>
+                    <div
+                        *ngIf="portal.login == false"
+                        class="login"
+                        title="Login"
+                        (click)="toggleLoginModal()"
+                    >
+                        Login
+                    </div>
+                   <!-- <div
+                        *ngIf="portal.login == true"
+                        class="login"
+                        title="Portal Login"
+                        (click)="goToPortal()"
+                    >
+                     Go To {{ portal.title }}
+                    
+                    </div> -->
+                    <span
+                        class="login-button"
+                        (click)="portal.login ? goToPortal() : toggleLoginModal()"
+                    ></span>
+                    <span class="menu-ham" (click)="openMenu()"></span>
+                </h1>
+                <login-modal
+                    class="login-comp"
+                    (closeLogin)="toggleLoginModal()"
+                    [class.slide-down]="login_open"
+                >
+                </login-modal>
+            </div>
+            <home-page-menubar
+                class="menu-bar"
+                [ngClass]="{ 'menu-open': menu_open }"
+                (closeMenu)="closeMenu($event)"
+                (closeLogin)="closeLoginModal()"
+            >
+            </home-page-menubar>
+            <header class="navbar">
+                <ul class="nav">
+                    <a class="nav-link" routerLink="./">
+                        <li>Home</li>
+                    </a>
+                    <div class="nav-link">
+                        <li class="drop-list">
+                            <span>Academics</span> <span class="drop-arrow"></span>
+                        </li>
+                        <div class="drop-down-list">
+                            <a routerLink="./academics/ug" class="sub-menu-link"
+                                ><span>Under Graduate</span></a
+                            >
+                            <a routerLink="./academics/pg" class="sub-menu-link"
+                                ><span>Post Graduate</span></a
+                            >
+                            <a routerLink="./academics/phd" class="sub-menu-link"
+                                ><span>PhD</span></a
+                            >
+                        </div>
+                    </div>
+                    <a class="nav-link" routerLink="./infrastructure">
+                        <li>Infrastructure</li>
+                    </a>
+                    <div class="nav-link">
+                        <li class="drop-list">
+                            <span>People</span> <span class="drop-arrow"></span>
+                        </li>
+                        <div class="drop-down-list">
+                            <div class="sub-menu-link">
+                                <div class="drop-list">
+                                    <span>Student</span>
+                                    <span class="drop-arrow"></span>
+                                </div>
+                                <div class="drop-down-list">
+                                    <a
+                                        routerLink="./people/student/be"
+                                        class="sub-menu-link"
+                                    >
+                                        <span>B.E</span></a
+                                    >
+                                    <a
+                                        routerLink="./people/student/me"
+                                        class="sub-menu-link"
+                                    >
+                                        <span>M.E</span>
+                                    </a>
+                                    <a
+                                        routerLink="./people/student/mept"
+                                        class="sub-menu-link"
+                                    >
+                                        <span>M.E Part Time</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sub-menu-link">
+                                <div class="drop-list">
+                                    <span>Staff</span> <span class="drop-arrow"></span>
+                                </div>
+                                <div class="drop-down-list">
+                                    <a
+                                        routerLink="./people/staffs"
+                                        class="sub-menu-link"
+                                    >
+                                        <span>Teaching Staff</span></a
+                                    >
+                                    <a
+                                        routerLink="./people/staffs/non-teaching"
+                                        class="sub-menu-link"
+                                    >
+                                        <span>Non-Teaching Staff</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a routerLink="./people/scholar" class="sub-menu-link">
+                                <span>Research scholars</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav-link">
+                        <li class="drop-list">
+                            <span>Research</span> <span class="drop-arrow"></span>
+                        </li>
+                        <div class="drop-down-list">
+                            <a routerLink="./research/supervisors" class="sub-menu-link"
+                                ><span>List of Supervisors</span></a
+                            >
+                            <a routerLink="./research/thesis" class="sub-menu-link"
+                                ><span>Theses</span></a
+                            >
+                            <a
+                                routerLink="./research/publications"
+                                class="sub-menu-link"
+                                ><span>Publications</span></a
+                            >
+                            <a routerLink="./research/projects" class="sub-menu-link"
+                                ><span>Projects</span></a
+                            >
+                        </div>
+                    </div>
+                    <a routerLink="./events" class="nav-link">
+                        <li>Events</li>
+                    </a>
+                    <div class="nav-link">
+                        <li class="drop-list">
+                            <span>Activities</span> <span class="drop-arrow"></span>
+                        </li>
+                        <div class="drop-down-list">
+                            <a
+                                routerLink="./activities/placements"
+                                class="sub-menu-link"
+                                ><span>Placements</span></a
+                            >
+                            <a routerLink="./activities/alumni" class="sub-menu-link"
+                                ><span>Alumni</span></a
+                            >
+                            <a
+                                routerLink="./activities/association"
+                                class="sub-menu-link"
+                                ><span>Association</span></a
+                            >
+                            <a
+                                routerLink="./general/page-under-construction"
+                                class="sub-menu-link"
+                                ><span>Industry Corner</span></a
+                            >
+                        </div>
+                    </div>
+                    <a routerLink="./contact" class="nav-link">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </header>
+        </div>
+        
+        <!-- footer ahead -->
+        <footer class="footer-distributed">
+            <div class="footer-div">
+                <div class="footer-div-box footer-left">
+                    <h3>About us<br /></h3>
+                    <p class="footer-links">
+                        <a routerLink="./">Home</a>
+                        <a routerLink="./vision-mission">Vission and Mission</a>
+                        <a routerLink="./events">Events</a>
+                        <a routerLink="./infrastructure">Infrastructure</a>
+                        <a routerLink="./contact">Contact</a>
+                    </p>
+                </div>
+                <div class="footer-div-box footer-box">
+                    <h3>Research</h3>
+                    <p class="footer-links">
+                        <a routerLink="./research/supervisors">List of Superisors</a>
+                        <a routerLink="./research/thesis">Theses</a>
+                        <a routerLink="./research/publications">Publications</a>
+                        <a routerLink="./research/projects">Projects</a>
+                    </p>
+                </div>
+                <div class="footer-div-box footer-box">
+                    <h3>Activities</h3>
+                    <p class="footer-links">
+                        <a routerLink="./activities/placements">Placements</a>
+                        <a routerLink="./activities/alumni">Alumini</a>
+                        <a routerLink="./">Industry Corner</a>
+                        <a routerLink="./activities/association">Association</a>
+                    </p>
+                </div>
+                <div class="footer-div-box footer-box">
+                    <h3>Academics</h3>
+                    <p class="footer-links">
+                        <a routerLink="./academics/ug">Under Graduate</a>
+                        <a routerLink="./academics/pg">Post Graduate</a>
+                        <a routerLink="./academics/phd">PhD</a>
+                        <a href="https://cac.annauniv.edu">CAC</a>
+                    </p>
+                </div>
+                <div class="footer-div-box footer-box">
+                    <h3>People</h3>
+                    <div class="footer-links">
+                        <div class="footer-anchor-wrap">
+                            <a routerLink="./people/student/be">B.E</a>
+                            <div class="footer-divider">|</div>
+                            <a routerLink="./people/student/me">M.E</a>
+                        </div>
+                        <a routerLink="./people/staffs">Faculty</a>
+                        <a routerLink="./people/scholar">Research Scholars</a>
+                        <a href="https://cfr.annauniv.edu">CFR</a>
+                    </div>
+                </div>
+                <div class="footer-div-box footer-right">
+                    <div>
+                        <i class="footer-address-icon"></i>
+                        <p><span> MIT Road, Radha Nagar</span>Chromepet, Chennai</p>
+                    </div>
+                    <div>
+                        <i class="footer-address-icon footer-phone"></i>
+                        <p>044 2251 6231</p>
+                    </div>
+                    <div>
+                        <i class="footer-address-icon footer-mail"></i>
+                        <p>ctdatacentre@mitindia.edu</p>
+                    </div>
+                    <div class="footer-icons">
+                        <a href="#"><i class="footer-social-icon f-facebook"></i></a>
+                        <a href="#"><i class="footer-social-icon f-instagram"></i></a>
+                        <a href="#"><i class="footer-social-icon f-youtube"></i></a>
+                        <a href="#"><i class="footer-social-icon f-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-team-name">
+                Copyright &copy; Computer Technology |
+                <a routerLink="./webteam">Designed by CT Web Team</a>
+            </p>
+        </footer>
+    </body>
 </html>
